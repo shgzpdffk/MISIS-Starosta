@@ -1,0 +1,52 @@
+name: Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements-dev.txt
+      - run: npm ci --ignore-scripts
+      - run: python -m pip install -r requirements-dev.txt
+      - run: npm run check
+      - run: python -m ruff check .
+      - run: python -m ruff format --check .
+      - run: python -m unittest discover -s tests -p 'test_*.py'
+  container:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - run: docker build -t misis-starosta:test .
+      - name: Smoke test with persistent storage
+        shell: bash
+        run: |
+          docker volume create misis-test-data
+          docker run -d --name misis-test -p 3000:3000 -e BOT_ENABLED=false -v misis-test-data:/data misis-starosta:test
+          trap 'docker logs misis-test; docker rm -f misis-test; docker volume rm misis-test-data' EXIT
+          curl --fail --retry 20 --retry-delay 1 --retry-connrefused http://127.0.0.1:3000/health
+          docker exec misis-test gosu node node -e "const {DatabaseSync}=require('node:sqlite'); const db=new DatabaseSync(process.env.DATABASE_PATH); db.close()"

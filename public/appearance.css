@@ -1,0 +1,364 @@
+.announcement-tabs {
+  display: flex;
+  gap: 8px;
+  overflow: auto;
+  padding-bottom: 14px;
+  scrollbar-width: thin;
+}
+.announcement-tabs .btn {
+  flex-shrink: 0;
+}
+.announcement-preview {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.announcement-full,
+.card-description {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+  margin: 16px 0;
+}
+.check-field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+  line-height: 1.5;
+  font-size: 13px;
+}
+.check-field input {
+  width: 20px;
+  min-height: 20px;
+  height: 20px;
+  margin: 0;
+  flex-shrink: 0;
+  accent-color: #7956dc;
+}
+.check-field span {
+  flex: 1;
+}
+.student-links {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+}
+.student-links .btn {
+  flex: 1;
+}
+.daily-answer {
+  margin: 12px 0 18px;
+}
+.daily-answer .hint {
+  margin-top: 8px;
+}
+.group-photo {
+  display: block;
+  width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  background: var(--card);
+}
+.request-card {
+  margin-top: 16px;
+}
+.request-card > small {
+  font-size: 10px;
+  color: var(--muted);
+  display: block;
+  margin: 8px 0;
+}
+.request-card p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+  margin: 14px 0;
+}
+.request-reply {
+  border-left: 3px solid var(--purple);
+  padding: 10px 12px;
+  background: #8d6bff0b;
+  margin-top: 16px;
+}
+.request-card .btn {
+  margin-top: 8px;
+}
+.ack-row {
+  padding: 14px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-bottom: 1px solid var(--line);
+}
+.ack-row small {
+  font-size: 10px;
+}
+.release-list {
+  padding-left: 20px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.release-list li {
+  margin: 12px 0;
+}
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 20px 0;
+}
+.student {
+  flex-wrap: wrap;
+}
+.student .name {
+  min-width: 90px;
+}
+sup {
+  font-size: 9px;
+  margin-left: 2px;
+}
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f5f4fa;
+  --card: #fff;
+  --card2: #eeebf6;
+  --line: #dcd8e8;
+  --text: #242033;
+  --muted: #686176;
+  --purple: #6840ca;
+  --green: #147a54;
+  --red: #b9304a;
+  --amber: #876015;
+  --blue: #345fa3;
+  background: var(--bg);
+  color: var(--text);
+}
+[data-theme='light'] body {
+  background: #ece9f4;
+  color: var(--text);
+}
+[data-theme='light'] .app {
+  background: var(--bg);
+}
+[data-theme='light'] .topbar,
+[data-theme='light'] .bottom-nav {
+  background: #fff;
+  border-color: var(--line);
+}
+[data-theme='light'] .wordmark,
+[data-theme='light'] .name,
+[data-theme='light'] .profile-card h2 {
+  color: var(--text);
+}
+[data-theme='light'] .wordmark span,
+[data-theme='light'] .muted,
+[data-theme='light'] .hint,
+[data-theme='light'] .source-note,
+[data-theme='light'] .footer-note,
+[data-theme='light'] .page-head p,
+[data-theme='light'] .lesson-body p,
+[data-theme='light'] .announcement p,
+[data-theme='light'] .announcement small,
+[data-theme='light'] .material p,
+[data-theme='light'] .quick p,
+[data-theme='light'] .student-info p {
+  color: var(--muted);
+}
+[data-theme='light'] .eyebrow {
+  color: #746a87;
+}
+[data-theme='light'] .hero {
+  background: linear-gradient(135deg, #eee5ff, #fff);
+  border-color: #d6c2ff;
+}
+[data-theme='light'] .hero .time,
+[data-theme='light'] .counts small {
+  color: #6d5f80;
+}
+[data-theme='light'] .hero .eyebrow {
+  color: #6840ca;
+}
+[data-theme='light'] .hero-link {
+  color: #6840ca;
+}
+[data-theme='light'] .btn {
+  color: var(--text);
+}
+[data-theme='light'] .btn.primary,
+[data-theme='light'] .segmented button.active {
+  color: #fff;
+}
+[data-theme='light'] .btn.outline {
+  color: #6840ca;
+  border-color: #c6b2e8;
+}
+[data-theme='light'] .btn.danger {
+  color: #b9304a;
+}
+[data-theme='light'] .segmented {
+  background: #eae6f2;
+  border-color: #d7d0e5;
+}
+[data-theme='light'] input,
+[data-theme='light'] textarea,
+[data-theme='light'] select,
+[data-theme='light'] .search {
+  background: #fff;
+  color: var(--text);
+  border-color: #cec7dc;
+}
+[data-theme='light'] input::placeholder,
+[data-theme='light'] textarea::placeholder {
+  color: #827b90;
+}
+[data-theme='light'] dialog {
+  background: #fff;
+  color: var(--text);
+  border-color: #d0c3e7;
+}
+[data-theme='light'] .notice {
+  background: #f1eafd;
+  color: #65527d;
+  border-color: #d8c8f4;
+}
+[data-theme='light'] .notice.warning {
+  background: #fff5df;
+  color: #775719;
+  border-color: #e6cf9d;
+}
+[data-theme='light'] .empty h3 {
+  color: var(--text);
+}
+[data-theme='light'] .badge {
+  background: #efedf5;
+  color: #676071;
+}
+[data-theme='light'] .badge.violet,
+[data-theme='light'] .edition {
+  background: #eee5ff;
+  color: #6840ca;
+}
+[data-theme='light'] .table-wrap,
+[data-theme='light'] table,
+[data-theme='light'] .attendance th,
+[data-theme='light'] .attendance td {
+  background: #fff;
+  color: var(--text);
+  border-color: #ddd7e8;
+}
+[data-theme='light'] .attendance th:first-child,
+[data-theme='light'] .attendance td:first-child {
+  background: #f4f0fa;
+}
+[data-theme='light'] .heat-cell.empty {
+  background: #e5e1ed;
+  border-color: #d5cfe0;
+}
+[data-theme='light'] .bottom-nav button.active {
+  color: #6840ca;
+}
+[data-theme='light'] .profile-avatar,
+[data-theme='light'] .profile-button {
+  color: #55308c;
+}
+[data-theme='light'] .calendar .day {
+  color: var(--text);
+  background: #fff;
+}
+[data-theme='light'] .heat-legend {
+  color: var(--muted);
+}
+[data-theme='light'] .tile-icon {
+  color: #6840ca;
+}
+[data-theme='light'] .day-counts > div,
+[data-theme='light'] .group-choice {
+  border-color: var(--line);
+}
+[data-theme='light'] .desktop-note .wordmark,
+[data-theme='light'] .desktop-note p {
+  color: var(--text);
+}
+[data-large='true'] .page h1 {
+  font-size: 28px;
+}
+[data-large='true'] h2 {
+  font-size: 22px;
+}
+[data-large='true'] h3 {
+  font-size: 17px;
+}
+[data-large='true'] .page p,
+[data-large='true'] .hint,
+[data-large='true'] .source-note,
+[data-large='true'] dialog p,
+[data-large='true'] .card-description,
+[data-large='true'] .request-card p {
+  font-size: 15px;
+}
+[data-large='true'] .btn,
+[data-large='true'] .segmented button,
+[data-large='true'] .setting span,
+[data-large='true'] label {
+  font-size: 15px;
+  min-height: 46px;
+}
+[data-large='true'] input,
+[data-large='true'] select,
+[data-large='true'] textarea {
+  font-size: 17px;
+}
+[data-large='true'] .lesson-body h3,
+[data-large='true'] .quick h3 {
+  font-size: 17px;
+}
+[data-large='true'] .lesson-time {
+  font-size: 15px;
+}
+[data-large='true'] small,
+[data-large='true'] .lesson-body p,
+[data-large='true'] .quick p {
+  font-size: 12px;
+}
+[data-large='true'] .name {
+  font-size: 16px;
+}
+[data-large='true'] .student-links {
+  flex-direction: column;
+}
+[data-large='true'] .release-list {
+  font-size: 16px;
+}
+[data-large='true'] .check-field input {
+  min-height: 24px;
+  width: 24px;
+  height: 24px;
+}
+[data-large='true'] .check-field {
+  align-items: center;
+}
+[data-large='true'] .bottom-nav button {
+  font-size: 10px;
+}
+[data-large='true'] .group-choice {
+  flex-wrap: wrap;
+}
+[data-large='true'] .group-open {
+  flex-basis: 50%;
+}
+[data-large='true'] .heatmap-card .hint {
+  font-size: 13px;
+}
+[data-large='true'] .page-head {
+  flex-wrap: wrap;
+}
+@media (min-width: 1000px) {
+  [data-theme='light'] body {
+    background: radial-gradient(ellipse at 20% 35%, #ddd3f3, transparent 55%), #f5f4fa;
+  }
+}

@@ -1,0 +1,23 @@
+.env
+.env.*
+!.env.example
+data/
+node_modules/
+dist/
+*.sqlite*
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.ruff_cache/
+coverage/
+*.log
+*.zip
+*.pem
+*.key
+*.pre-*-backup
+# Official source data is downloaded by the operator, not distributed as code.
+misis-data*.json
+*.backup-*
+*.db
+*.db-*

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#0c0d12" />
+    <meta
+      name="description"
+      content="Расписание, посещаемость и жизнь группы. Мини-приложение для старост МИСИС."
+    />
+    <title>МИСИС · Староста</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%237b55fa'/%3E%3Cpath d='M15 46V18h7l10 15 10-15h7v28h-8V31l-9 13-9-13v15z' fill='white'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/appearance.css" />
+    <script src="https://telegram.org/js/telegram-web-app.js" defer></script>
+    <script src="/app.js" type="module"></script>
+  </head>
+  <body>
+    <div class="desktop-note">
+      <a class="wordmark" href="/">МИСИС<span>СТАРОСТА</span></a>
+      <p>Всё для твоей группы.<br />В одном приложении.</p>
+      <div class="desktop-rule"></div>
+      <small>Расписание · Посещаемость · Общение</small
+      ><span class="pilot">Независимый студенческий проект</span>
+    </div>
+    <div id="app" class="app">
+      <main class="loading">
+        <div class="brand-mark">М</div>
+        <h2>МИСИС · Староста</h2>
+        <p>Открываем твою группу…</p>
+      </main>
+    </div>
+    <dialog id="modal" aria-labelledby="modal-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
